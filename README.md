@@ -5,6 +5,8 @@ Simple app that prints "hello"
 
 ## Files ###
 - `hello.ps1` This is our simple app code
+- `Vagrantfile` Place this file in new folder and use `vagrant up` command in order to run xenial64 machine with powershell installed.
+- `powershell_install.sh` Place this script at the same directory like `Vagrantfile` . Purpose of this script is to install powershell automatically on your test machine `xenial64` 
 
 ## TODO
 
