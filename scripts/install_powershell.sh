@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-# add the Microsoft repository GPG keys
-wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
+# install curl if not installed
+which curl &>/dev/null || {
+  sudo apt-get update
+  sudo apt-get install -y curl
+}
 
-sudo dpkg -i packages-microsoft-prod.deb
-rm -fr packages-microsoft-prod.deb
-
-# Install PowerShell
-export DEBIAN_FRONTEND=noninteractive
+# install powershell
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list | sudo tee /etc/apt/sources.list.d/microsoft.list
 sudo apt-get update
 sudo apt-get install -y powershell
-sudo apt-get clean
