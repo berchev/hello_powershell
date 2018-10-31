@@ -2,6 +2,7 @@
 
 ## Description ###
 Simple app that prints "hello" on powershell
+
 Note that this configuration is tested only on Ubuntu 16.04 Xenial
 
 ## Files ###
