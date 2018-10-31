@@ -1,0 +1,13 @@
+language: generic
+dist: xenial
+sudo: required
+before_install:
+- wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
+- rm -fr packages-microsoft-prod.deb
+- export DEBIAN_FRONTEND=noninteractive
+- sudo apt-get update
+- sleep 10
+- sudo apt-get install -y powershell
+- sudo apt-get clean
+script:
+- bash test.sh
